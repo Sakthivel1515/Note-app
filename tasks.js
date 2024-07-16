@@ -57,7 +57,6 @@ function completedTask() {
                 data[date].incompleted.splice(index,1);
             }
             insertHTMLTasks(date);
-            // console.log(data);
         })
     })    
 }
