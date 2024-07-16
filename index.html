@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This Notes app is a tool that helps you organize your work and keep track of tasks.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+
+    <link rel="shortcut icon" href="/to-do_list/images/icon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="/to-do_list/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script defer type="module" src="/to-do_list/date.js"></script>
+    <!-- <script defer src="/to-do_list/tasks.js"></script> -->
+</head>
+<body>
+    <div class="app">
+        <h1>Notes</h1>
+        <div class="date-container">
+            <input type="date" class="js-date" name="date" id="date">
+            <button class="js-erase-all-btn">Erass all</button>
+            <div class="dates">
+                <ul class="js-dates">
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="input-container">
+                <input type="text" class="js-task-input" placeholder="Enter the task...">
+                <button class="js-add-btn">Add</button>
+            </div>
+            <div class="btns-container">
+                <button class="js-completed-btn">Completed</button>
+                <button class="js-incompleted-btn">InCompleted</button>
+                <button class="js-show-all-btn">Show All</button>
+                <button class="del-btn js-del-btn">Delete All</button>
+            </div>
+            <div class="tasks-container">
+                <p>You have <span class="js-tasks-to-complete">2 tasks</span> to complete.</p>
+                <ul class="tasks js-tasks">
+                    <!-- <li>
+                        <input type="radio" name="" id="">
+                        <p>Task</p>
+                        <div class="options">
+                            <i class="fa-solid fa-pen-to-square edit-op"></i>
+                            <i class="fa-solid fa-trash delete-op" ></i>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="" id="">
+                        <p>Task</p>
+                        <div class="options">
+                            <i class="fa-solid fa-pen-to-square edit-op"></i>
+                            <i class="fa-solid fa-trash delete-op" ></i>
+                        </div>
+                    </li> -->
+                    
+                </ul>
+            </div>
+        </div>
+        <p class="copy-rights">@Developed by <span>Sakthi</span>. All rights reserved.</p>
+    </div>
+</body>
+</html>

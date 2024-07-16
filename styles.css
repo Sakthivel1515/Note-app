@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --background-color: #3a7fe6;
+    --light-background-clr : #dadada;
+    --dark-background-clr : #929090;
+    --app-background-clr: #fff;
+    --delete-clr: #f15757;
+    --main-clr: #6399e9;
+    --font--white : #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 10px;
+    background-color: var(--background-color);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+    min-height: 600px;
+    background-color: var(--app-background-clr);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.app h1 {
+    /* color: var(--main-clr); */
+    margin-bottom: 10px;
+}
+
+.app .date-container {
+    position: relative;
+}
+
+.date-container input {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 5px;
+    border-radius: 5px;
+    min-width: 100px;
+    max-width: 130px;
+    outline: none;
+    border: 1px solid var(--background-color);
+    background-color: var(--main-clr);
+    color: var(--font--white);
+    cursor: pointer;
+
+    position: relative;
+    overflow: visible;
+}
+
+.date-container input:hover::after {
+    position: absolute;
+    content: "Enter the date";
+    top: -27px;
+    right: -109px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+
+.date-container button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 9px 5px;
+    min-width: 130px;
+    outline: none;
+    border: 1px solid #f10101;
+    border-radius: 5px;
+    background-color: var(--delete-clr);
+    color: var(--font--white);
+    cursor: pointer;
+
+    position: absolute;
+    right: 0;
+}
+
+.date-container button:active {
+    scale: 0.97;
+}
+
+.dates {
+    background-color: var(--light-background-clr);
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+.dates ul {
+    list-style: none;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    /* overflow-x: scroll; */
+}
+
+.dates ul li {
+    cursor: pointer;
+}
+
+.dates ul li p:first-child {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 55px;
+    margin-bottom: 8px;
+    background-color: var(--main-clr);
+    color: var(--font--white);
+    border: 1px solid var(--background-color);
+}
+
+/* li hover effect.we need to use Js */
+.dates ul li.scale {
+    scale: 1.17;
+    margin:5px;
+    /* padding: 5px;
+    border: 1px solid var(--main-clr);
+    border-radius: 3px; */
+}
+
+.input-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.input-container input {
+    padding: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    /* width: 340px; */
+    flex-grow: 1;
+    min-width: 100px;
+    border: 1px solid var(--light-background-clr);
+    box-shadow: 0 0 3px #000;
+}
+
+.input-container input.error {
+    border: 1px solid var(--delete-clr);
+    box-shadow: 0 0 6px var(--delete-clr);
+    color: var(--delete-clr);
+}
+
+.input-container button {
+    width: 130px;
+    min-width: 50px;
+    padding: 6px 0;
+    outline: none;
+    border: 1px solid var(--background-color);
+    background-color: var(--main-clr);
+    border-radius: 5px;
+    color: var(--font--white);
+    font-size: 1.1rem;
+}
+
+.input-container button:active,
+.btns-container button:active,
+.tasks-container ul li .options i:active {
+    scale: 0.97;
+}
+
+.btns-container {
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px; */
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-content: center;
+    justify-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+/* @media screen and (max-width : 560px) {
+    .btns-container {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+} */
+
+.btns-container button {
+    width: 85%;
+    min-width: max-content;
+    padding: 8px 10px ;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    outline: none;
+
+    position: relative;
+    z-index: 1;
+}
+
+.btns-container button:not(.del-btn) {
+    border: 2px solid var(--background-color);
+    box-shadow: 0 0 3px 1.2px var(--background-color);
+}
+
+.btns-container button:hover {
+    color: var(--font--white);
+}
+
+.btns-container button:not(.del-btn):hover::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 50px;
+    background-color: var(--main-clr);
+    height: 100%;
+
+    animation: btn-ani 0.2s 0.1s forwards;
+}
+
+.btns-container .del-btn {
+    border: 2px solid var(--delete-clr);
+    box-shadow: 0 0 3px 1.2px var(--delete-clr);
+}
+
+.btns-container .del-btn:hover::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 50px;
+    background-color: var(--delete-clr);
+    height: 100%;
+
+    animation: btn-ani 0.2s 0.1s forwards;
+}
+
+@keyframes btn-ani {
+    0% {
+        width: 0%;
+    }
+    33% {
+        width: 50%;
+    }
+    66% {
+        width: 75%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.tasks-container {
+    background-color: var(--light-background-clr);
+    border-radius: 5px;
+    padding: 10px;
+    padding-bottom: 25px;
+
+    max-height: 380px;
+    overflow-y: scroll;
+}
+
+.tasks-container p:first-child {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.tasks-container ul {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tasks-container ul li {
+    background-color: var(--app-background-clr);
+    border-radius: 5px;
+    min-height: 60px;
+    position: relative;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tasks-container ul li input {
+    scale: 1.3;
+}
+
+.tasks-container ul li p.completed {
+    text-decoration: line-through;
+    font-weight: bold;
+}
+
+.tasks-container ul li .options {
+    position: absolute;
+    right: 20px;
+}
+
+.tasks-container ul li .options i {
+    margin: 0 5px;
+}
+
+.tasks-container ul li .options i:first-child {
+    background-color : var(--main-clr);
+    color: var(--font--white);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.tasks-container ul li .options i:last-child {
+    background-color : var(--delete-clr);
+    color: var(--font--white);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.copy-rights {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--light-background-clr);
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+.copy-rights span {
+    color: var(--main-clr);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 550px) {
+    body {
+        padding: 0;
+        display: block;
+        overflow-y: scroll;
+    }
+
+    .app {
+        min-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    /* .app .main-container {
+        height: 75vh;
+    } */
+
+    .tasks-container {
+        border-top: 2px solid var(--dark-background-clr);
+        max-height: none;
+        margin-top: 20px;
+        overflow: auto;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: var(--app-background-clr);
+    }
+
+    .tasks-container ul li {
+        border: 8px;
+        border: 1px solid var(--dark-background-clr);
+    }
+
+    .copy-rights {
+        border-radius: none;
+    }
+
+}
