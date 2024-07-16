@@ -1,4 +1,4 @@
-import { updatedDate } from "/to-do_list/tasks.js";
+import { updatedDate } from "/tasks.js";
 
 const dateBtn = document.querySelector(".js-date")
 const dates = document.querySelector(".js-dates")
