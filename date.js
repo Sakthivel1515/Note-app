@@ -8,9 +8,7 @@ const now = new Date();
 let day = now.getDate();
 let month = now.getMonth() + 1;
 let year = now.getFullYear();
-// let daysInMonth = new Date(year,month,0).getDate()
-// dateBtn.value = now.toISOString().substring(0,10);
-dateBtn.value = "dd-mm-yyyy";
+dateBtn.value = now.toISOString().substring(0,10);
 updatedDate(day,month,year)
 
 function addListenerToList() {
